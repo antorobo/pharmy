@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2020_09_22_073207) do
     t.boolean "phone_verified"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index "\"countrycode\", \"phone\"", name: "index_visitors_on_countrycode_and_phone", unique: true
+    t.index ["country_code", "phone"], name: "index_visitors_on_country_code_and_phone", unique: true
     t.index ["email"], name: "index_visitors_on_email", unique: true
     t.index ["reset_password_token"], name: "index_visitors_on_reset_password_token", unique: true
   end

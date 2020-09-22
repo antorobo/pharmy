@@ -41,7 +41,7 @@ class DeviseCreateVisitors < ActiveRecord::Migration[6.0]
 
     add_index :visitors, :email,                unique: true
     add_index :visitors, :reset_password_token, unique: true
-    add_index :visitors, [:countrycode, :phone], unique: true
+    add_index :visitors, [:country_code, :phone], unique: true
     # add_index :visitors, :confirmation_token,   unique: true
     # add_index :visitors, :unlock_token,         unique: true
   end
