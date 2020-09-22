@@ -1,0 +1,32 @@
+1) visitor visits the welcome page
+the welcome page is only a controller with a get view
+2) the visitor is a scaffold object with email countrycode and phone
+3) there is a link to create new visitor the new visitor is a devise model.
+4)the visitor is signed in seamlessly with a created password which is a combination of their email and phone
+5)the visitor is invited to order their pharma products online by confirming their phone
+6) phone is confirmed by sms and token by twilio
+7)on confirmation the visitor is upgraded to client object automatically behind scenes
+8)and signed in as current_client and signed out from being current_visitor
+9)current client has many proposals which is an object--proposal has one attached prescription and one attached id_front and one attached id-back- belongs_to client.
+all CRUD actions are available to client.
+10) each proposal can have one order which gets created when the proposal is finally submitted--automatically behind scenes- this object belongs to client and the concerned proposal.
+11) client cannot manipulate the order
+
+
+
+superuser:
+has_many pharmas,  crud object which can be manipulated by only superuser
+
+each pharma has one
+manager
+storekeeper
+despatcher
+email
+phone
+has_many orders
+has_many invoices
+order has one invoice
+invoice belongs_to order and pharma
+has many inventory items
+
+

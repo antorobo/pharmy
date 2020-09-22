@@ -1,0 +1,14 @@
+<div class="header">
+  <% if visitor_signed_in? %>
+    <%= current_visitor.email %>
+    <li><%= link_to 'Profile', edit_visitor_registration_path %></li>
+    <li><%= link_to 'Log out', destroy_visitor_session_path, method: :delete %></li>
+  <% else %>
+    <li><%= link_to 'Log In', new_visitor_session_path %></li>
+    <li><%= link_to 'Sign Up', new_visitor_registration_path %></li>
+  <% end %>
+
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+</div>
